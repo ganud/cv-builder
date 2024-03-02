@@ -1,0 +1,30 @@
+@charset "UTF-8";
+.bold-to-normal-row {
+  display: flex;
+  gap: 5px;
+  font-size: 1.2rem;
+}
+
+.experience-bold-text {
+  font-weight: bold;
+}
+
+.job-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.description-item::before {
+  content: "•";
+}
+
+.description-item {
+  margin-left: 0.5rem;
+}/*# sourceMappingURL=experience.css.map */
