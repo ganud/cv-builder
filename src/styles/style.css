@@ -61,6 +61,23 @@ table {
 
 .sidebar {
   background-color: rgb(96, 96, 96) 8eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.form-container {
+  width: 85%;
+  height: 80%;
+  background-color: rgb(59, 59, 59);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .content {

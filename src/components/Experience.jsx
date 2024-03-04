@@ -16,7 +16,8 @@ export default function Experience({title, datestart, dateend, workplace, descri
             </div>
             <div className="description-container">
                 <div className="description-item"> Stuff I didddd</div>
-                <div className="description-item"> Stuff I didddd</div>
+                <div className="description-item"> Stuff I didds</div>
+
             </div>
         </div>
     </>
