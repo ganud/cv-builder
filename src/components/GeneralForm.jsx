@@ -7,21 +7,31 @@ export default function GeneralForm({title, fields}) {
     return <>
         <div className="form-section">
             <div className="form-title">{title}</div>
-            {fields.map(field => 
-                <div className="input-container">
-                    <label htmlFor={field}>{field}</label>
-                    <input type="text" id={field} name={field}
-                    onChange={(event) => ChangeField(field, event.target.value)}
-                    />
-                    
-                </div>
+            {fields.map(function (field) {
+                // Underscore so it works with class selectors
+                let field_ = field.replace(' ', '_')
+
+                return <div className="input-container">
+                <label htmlFor={field_}>{field_}</label>
+                <input type="text" id={field_} name={field_}
+                onChange={(event) => ChangeField(field_, event.target.value)}
+                />
+            </div>
+            }
             )}
+            <div className="input-container">
+                <label htmlFor="Summary_Statement">Summary Statement</label>
+                <textarea name="Summary_Statement" id="Summary_Statement" cols="20" rows="5"
+                    onChange={(event) => ChangeField('Summary_Statement', event.target.value)}
+                ></textarea>
+                
+            </div>
         </div>
     </>
 }
 
+// Changes the preview text of a field, provided the field name and the preview's class name are the same
 function ChangeField(field, text) {
     const fieldDOM = document.getElementsByClassName(field)[0];
-    console.log(field)
-    fieldDOM.innerHTML = text;
+    fieldDOM.textContent = text;
 }

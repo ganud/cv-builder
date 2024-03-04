@@ -22,8 +22,9 @@ input {
   border-radius: 10px;
 }
 
-.centered {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+textarea {
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  resize: none;
 }/*# sourceMappingURL=generalform.css.map */
