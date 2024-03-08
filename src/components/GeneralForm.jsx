@@ -12,7 +12,7 @@ export default function GeneralForm({title, fields}) {
                 let field_ = field.replace(' ', '_')
 
                 return <div className="input-container">
-                <label htmlFor={field_}>{field_}</label>
+                <label htmlFor={field_}>{field}</label>
                 <input type="text" id={field_} name={field_}
                 onChange={(event) => ChangeField(field_, event.target.value)}
                 />

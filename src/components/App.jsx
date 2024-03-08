@@ -2,8 +2,15 @@ import '.././styles/style.css'
 import Experience from './Experience.jsx'
 import Section from './Section.jsx'
 import GeneralForm from './GeneralForm.jsx'
+import ExperienceForm from './ExperienceForm.jsx'
+import { useState } from 'react'
+
 // Contains the sidebar and cv mirrror
 export default function App() {
+
+    const [experiences, setExperiences] = useState([])
+    const [educations, setEducations] = useState([])
+
     return <>
     <div className="sidebar">
         <div className="title">CV-BUILDER</div>
@@ -12,6 +19,11 @@ export default function App() {
                 title='General Info'
                 fields={['Full Name','Phone', 'Email', 'Website', 'Address']}
             ></GeneralForm>
+            <ExperienceForm
+                title='Work Experience'
+                fields={['Company Name','Position', 'Description', 'Date Start', 'Date End']}
+            >
+            </ExperienceForm>
         </div>
     </div>
     <div className="content">
@@ -37,7 +49,7 @@ export default function App() {
             </Section>
             <div className="preview-row-section">
                 <div className="preview-row-title">Practical Experience</div>
-                <div className="preview-row-content">
+                <div className="preview-row-content" id='job-experience'>
                     <Experience></Experience>
                     <Experience></Experience>
                     <Experience></Experience>
