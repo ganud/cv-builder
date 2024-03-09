@@ -6,12 +6,12 @@ import '.././styles/generalform.css';
 
 const JobExperience = document.getElementById('job-experience')
 
-export default function ExperienceForm({title, fields}) {
+export default function ExperienceForm({title, fields, changeExperiences, stateExperience}) {
     // The experience object, give it a key as it is added upwards
     const [experience, setExperience] = useState({})
 
     return <>
-        <div className="form-section">
+        <form className="form-section">
             <div className="form-title">{title}</div>
             {fields.map(function (field) {
                 // Underscore so it works with class selectors
@@ -19,22 +19,22 @@ export default function ExperienceForm({title, fields}) {
 
                 let type = 'text'
                 if (field.startsWith('Date')) {type = 'date'}
-
                 return <div className="input-container">
                 <label htmlFor={field_}>{field}</label>
                 <input type={type} id={field_} name={field_}
                 onChange={function(event) 
                     {
                         setExperience(prevState => ({...prevState, [field_]: event.target.value}))
-                        console.log(experience);
                     }
                 }
+                required
                 />
             </div>
             }
             )}
-            <button>Submit</button>
-            {/* Button which adds the object to the preview */}
-        </div>
+            <button type='button' onClick={() => changeExperiences([...stateExperience, {...experience, id:'seki'}])}>Submit</button>
+            {/* Button which adds uses a function that adds the object to the preview and returns a render*/}
+            {/* Parent then destructures said function and renders */}
+        </form>
     </>
 }

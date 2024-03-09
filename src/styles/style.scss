@@ -76,6 +76,13 @@ table {
     padding: 20px;
     border-radius: 10px;
     overflow: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.form-container::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
 }
 
 .content {

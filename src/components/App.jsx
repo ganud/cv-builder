@@ -22,6 +22,11 @@ export default function App() {
             <ExperienceForm
                 title='Work Experience'
                 fields={['Company Name','Position', 'Description', 'Date Start', 'Date End']}
+                changeExperiences={function(experiences) {
+                    setExperiences(experiences)
+                    console.log(experiences)
+                }}
+                stateExperience={experiences}
             >
             </ExperienceForm>
         </div>
@@ -50,17 +55,13 @@ export default function App() {
             <div className="preview-row-section">
                 <div className="preview-row-title">Practical Experience</div>
                 <div className="preview-row-content" id='job-experience'>
-                    <Experience></Experience>
-                    <Experience></Experience>
-                    <Experience></Experience>
+
                 </div>
             </div>
             <div className="preview-row-section">
                 <div className="preview-row-title">Education</div>
                 <div className="preview-row-content">
-                    <Experience></Experience>
-                    <Experience></Experience>
-                    <Experience></Experience>
+
                 </div>
             </div>
             
