@@ -55,7 +55,16 @@ export default function App() {
             <div className="preview-row-section">
                 <div className="preview-row-title">Practical Experience</div>
                 <div className="preview-row-content" id='job-experience'>
-
+                    {experiences.map(function(experience) {
+                        return <Experience key={experience.id}
+                            title={experience.Position}
+                            datestart={experience.Date_Start}
+                            dateend={experience.Date_End}
+                            workplace={experience.Company_Name}
+                            descriptions={experience.Description}
+                        >    
+                        </Experience>
+                    })}
                 </div>
             </div>
             <div className="preview-row-section">

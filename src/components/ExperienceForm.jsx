@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import '.././styles/generalform.css';
+import { v4 as uuidv4 } from 'uuid';
+
 // Try and create a form object out of state?
 // Add that object to the Experience Div via a button
 
@@ -21,18 +23,17 @@ export default function ExperienceForm({title, fields, changeExperiences, stateE
                 if (field.startsWith('Date')) {type = 'date'}
                 return <div className="input-container">
                 <label htmlFor={field_}>{field}</label>
-                <input type={type} id={field_} name={field_}
+                <input type={type} id={field_} name={field_} required
                 onChange={function(event) 
                     {
                         setExperience(prevState => ({...prevState, [field_]: event.target.value}))
                     }
                 }
-                required
                 />
             </div>
             }
             )}
-            <button type='button' onClick={() => changeExperiences([...stateExperience, {...experience, id:'seki'}])}>Submit</button>
+            <button type='button' onClick={() => changeExperiences([...stateExperience, {...experience, id:uuidv4()}])}>Submit</button>
             {/* Button which adds uses a function that adds the object to the preview and returns a render*/}
             {/* Parent then destructures said function and renders */}
         </form>
