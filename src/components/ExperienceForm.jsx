@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '.././styles/generalform.css';
 import { v4 as uuidv4 } from 'uuid';
-
+import ExperienceNode from './ExperienceNode.jsx';
 // Try and create a form object out of state?
 // Add that object to the Experience Div via a button
 
@@ -13,7 +13,10 @@ export default function ExperienceForm({title, fields, changeExperiences, stateE
     const [experience, setExperience] = useState({})
 
     return <>
-        <form className="form-section">
+        <form className="form-section" onSubmit={(event) => {
+                event.preventDefault();
+                changeExperiences([...stateExperience, {...experience, id:uuidv4()}])}
+            }>
             <div className="form-title">{title}</div>
             {fields.map(function (field) {
                 // Underscore so it works with class selectors
@@ -33,9 +36,19 @@ export default function ExperienceForm({title, fields, changeExperiences, stateE
             </div>
             }
             )}
-            <button type='button' onClick={() => changeExperiences([...stateExperience, {...experience, id:uuidv4()}])}>Submit</button>
-            {/* Button which adds uses a function that adds the object to the preview and returns a render*/}
-            {/* Parent then destructures said function and renders */}
+            {/* Button to pass data to the parent experiences array */}
+            <button type='submit'>Submit</button>
+            {/* Render all the previous experiences as editable elements */}
+            {/* {
+                stateExperience.map((AnExperience) => {
+                    return <>
+                        <ExperienceNode 
+                        Experience={AnExperience}
+                        ></ExperienceNode>
+                    </>
+                })
+            } */}
         </form>
+        
     </>
 }

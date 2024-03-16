@@ -110,6 +110,7 @@ table {
 .flex-row-center {
     display: flex;
     justify-content: center;
+    font-size: 1.2rem;
     gap: 10px;
 }
 
@@ -131,4 +132,8 @@ table {
     min-height: 100px;
     flex-direction: column;
     gap:10px;
+}
+
+.Full_Name {
+    font-size: 1.5rem;
 }

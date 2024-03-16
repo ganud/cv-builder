@@ -3,6 +3,7 @@ import Experience from './Experience.jsx'
 import Section from './Section.jsx'
 import GeneralForm from './GeneralForm.jsx'
 import ExperienceForm from './ExperienceForm.jsx'
+import Education from './Education.jsx'
 import { useState } from 'react'
 
 // Contains the sidebar and cv mirrror
@@ -21,12 +22,20 @@ export default function App() {
             ></GeneralForm>
             <ExperienceForm
                 title='Work Experience'
-                fields={['Company Name','Position', 'Description', 'Date Start', 'Date End']}
+                fields={['Company Name','Position','Location', 'Description', 'Date Start', 'Date End']}
                 changeExperiences={function(experiences) {
                     setExperiences(experiences)
-                    console.log(experiences)
                 }}
                 stateExperience={experiences}
+            >
+            </ExperienceForm>
+            <ExperienceForm
+                title='Education'
+                fields={['School','Degree', 'Field', 'Date Start', 'Date End']}
+                changeExperiences={function(educations) {
+                    setEducations(educations)
+                }}
+                stateExperience={educations}
             >
             </ExperienceForm>
         </div>
@@ -62,15 +71,27 @@ export default function App() {
                             dateend={experience.Date_End}
                             workplace={experience.Company_Name}
                             descriptions={experience.Description}
+                            location={experience.Location}
                         >    
                         </Experience>
                     })}
                 </div>
             </div>
+
             <div className="preview-row-section">
                 <div className="preview-row-title">Education</div>
                 <div className="preview-row-content">
-
+                {educations.map(function(education) {
+                        return <Education key={education.id}
+                            school={education.School}
+                            field={education.Field}
+                            degree={education.Degree}
+                            datestart={education.Date_Start}
+                            dateend={education.Date_End}
+                            
+                        >    
+                        </Education>
+                    })}
                 </div>
             </div>
             
