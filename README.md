@@ -1,5 +1,5 @@
 A relatively complete CV-Builder made with React. Functional, but no edit, deletion, or localstorage.
-![Preview]("https://i.imgur.com/qR9QGN7.png")
+![Preview](https://i.imgur.com/qR9QGN7.png)
 
 <div>Comment:</div>
 <div>Not too proud of this one, considering I fumbled too much with passing the form inputs to the HTML preview.</div>
