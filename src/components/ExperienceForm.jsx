@@ -1,10 +1,6 @@
 import { useState } from 'react';
 import '.././styles/generalform.css';
 import { v4 as uuidv4 } from 'uuid';
-import ExperienceNode from './ExperienceNode.jsx';
-// Try and create a form object out of state?
-// Add that object to the Experience Div via a button
-
 
 const JobExperience = document.getElementById('job-experience')
 
@@ -38,16 +34,6 @@ export default function ExperienceForm({title, fields, changeExperiences, stateE
             )}
             {/* Button to pass data to the parent experiences array */}
             <button type='submit'>Submit</button>
-            {/* Render all the previous experiences as editable elements */}
-            {/* {
-                stateExperience.map((AnExperience) => {
-                    return <>
-                        <ExperienceNode 
-                        Experience={AnExperience}
-                        ></ExperienceNode>
-                    </>
-                })
-            } */}
         </form>
         
     </>

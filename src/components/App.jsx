@@ -23,6 +23,7 @@ export default function App() {
             <ExperienceForm
                 title='Work Experience'
                 fields={['Company Name','Position','Location', 'Description', 'Date Start', 'Date End']}
+                // Allow form fields to influence the preview by changing parent contents
                 changeExperiences={function(experiences) {
                     setExperiences(experiences)
                 }}
@@ -42,23 +43,21 @@ export default function App() {
     </div>
     <div className="content">
         <div className="preview-container">
-            {/* Start with a header
-            Have rows of resume column components, with inputtable text */}
             <div className="preview-header">
                 <div className="flex-row-center">
-                    <div className="Full_Name">Jone Jonesy</div>
+                    <div className="Full_Name">Your Name</div>
                 </div>
                 <div className="flex-row-center">
-                    <div className="Phone">stuff</div>
-                    <div className="Email">stuff</div>
-                    <div className="Website">stuff</div>
-                    <div className="Address">stuff</div>
+                    <div className="Phone">Phone</div>
+                    <div className="Email">Email</div>
+                    <div className="Website">Website</div>
+                    <div className="Address">Address</div>
                 </div>
             </div>
             <Section
                 className="Summary_Statement"
                 title = "Summary Statement"
-                content= 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, odio voluptas! Magni optio nesciunt voluptatem tempora consequuntur perferendis, ipsum molestias enim, minima sapiente quasi, necessitatibus eum? Fugit soluta quo necessitatibus.'
+                content= ''
             >
             </Section>
             <div className="preview-row-section">
@@ -88,7 +87,6 @@ export default function App() {
                             degree={education.Degree}
                             datestart={education.Date_Start}
                             dateend={education.Date_End}
-                            
                         >    
                         </Education>
                     })}
